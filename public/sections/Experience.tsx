@@ -124,7 +124,7 @@ const Experience: React.FC<{ heading?: string }> = ({ heading }) => {
                 {/* <img className={'w-auto h-full object-cover'} src={'/assets/images/bg/bg-3.jpg'} /> */}
             </div>
             <div className={'flex flex-col mb-20 gap-5 items-center justify-center text-center col-span-2'}>
-                <h3 className={'flex flex-col gap-2 text-5xl font-raleway text-yellow-500 font-bold'}>
+                <h3 className={'flex flex-col gap-2 text-5xl font-raleway text-yellow-100 font-bold'}>
                     <span>Work Experience and</span>
                     <span
                         className="text-neutral-100 bg-clip-text">

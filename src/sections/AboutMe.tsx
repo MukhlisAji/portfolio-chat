@@ -1,33 +1,39 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import AIChat from "@/components/AIChat";
 
 const AboutMe = () => {
     return (
-        <section className="w-full bg-black text-white py-12 px-4">
+        <section id={"contact"} className="w-full bg-black text-white py-12 px-4">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
                 {/* Left Column */}
                 <div className="flex-1 bg-[#111111] rounded-3xl p-8 space-y-6 shadow-lg">
-                    <button className="border border-yellow-500 text-yellow-500 px-4 py-1 rounded-full text-sm">
+                    <button className="border border-yellow-100 text-yellow-100 px-4 py-1 rounded-full text-sm">
                         Available for work
                     </button>
                     <div>
                         <h2 className="text-2xl md:text-3xl font-medium text-white">
-                            Hi, I’m <span className="text-yellow-100">Werner Disum</span>,
+                            Hi, I’m <span className="text-yellow-100">Mukhlis Purnomo Aji</span>,
                         </h2>
                         <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-100 mt-2 leading-tight">
-                            Senior Product Designer <br /> Based in London
+                            Senior Software Engineer
                         </h1>
+
                     </div>
                     <hr className="border-[#333] my-4" />
-                    <p className="text-gray-300 max-w-xl">
+                    <h3 className="text-xl md:text-2xl font-medium text-yellow-100 mt-2 leading-tight">
+                        Ask me anything..
+                    </h3>
+                    {/* <p className="text-gray-300 max-w-xl">
                         Experienced Fullstack Java Developer with 6 years of hands-on experience building enterprise applications
                         using Java, Spring Boot, Microservices, and React.js. Proven success in designing scalable systems,
                         integrating APIs, and deploying cloud-native apps on AWS, GCP, and Azure DevOps. Strong collaborator in
                         Agile teams, delivering impactful software for industries including banking, real estate, and energy
-                    </p>
+                    </p> */}
+                    <AIChat />
 
                     {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 pt-6">
+                    {/* <div className="grid grid-cols-3 gap-4 pt-6">
                         <div className="text-center">
                             <h3 className="text-3xl font-extrabold text-yellow-100">12</h3>
                             <p className="text-sm text-gray-400">Years of Experience</p>
@@ -40,7 +46,7 @@ const AboutMe = () => {
                             <h3 className="text-3xl font-extrabold text-yellow-100">6k</h3>
                             <p className="text-sm text-gray-400">Client Worldwide</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Right Column */}
@@ -49,14 +55,20 @@ const AboutMe = () => {
                     <div className="flex justify-center">
                         <img src={'/assets/images/profile/me.png'}
                             alt="Profile"
-                            className="rounded-2xl w-48 h-48 object-cover"
+                            className="rounded-2xl w-48 h-48 object-cover object-top"
                         />
                     </div>
                     <div className="text-yellow-100 space-y-1 text-sm font-medium">
-                        <p>disum99@gmail.com</p>
-                        <p>Base in London,</p>
+                        <p>mukhlish.purnomo@gmail.com</p>
+                        <p>Jakarta, Indonesia</p>
                     </div>
 
+                    <p className="text-gray-300 max-w-xl">
+                        Experienced Fullstack Java Developer with 6 years of hands-on experience building enterprise applications
+                        using Java, Spring Boot, Microservices, and React.js. Proven success in designing scalable systems,
+                        integrating APIs, and deploying cloud-native apps on AWS, GCP, and Azure DevOps. Strong collaborator in
+                        Agile teams and delivering impactful software for industries.
+                    </p>
                     {/* Social Icons */}
                     <div className="flex justify-center gap-4 pt-2">
                         <Icon icon="ri:facebook-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
@@ -65,9 +77,12 @@ const AboutMe = () => {
                     </div>
 
                     {/* CV Button */}
-                    <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-2 rounded-xl transition duration-300">
-                        Download CV
-                    </button>
+                    <a href="/documents/resume.pdf" download aria-label="Download my resume">
+                        <button className="bg-yellow-100 hover:bg-yellow-400 text-black font-semibold px-6 py-1 cursor-pointer rounded-xl transition duration-300">
+                            Download CV
+                        </button>
+                    </a>
+
                 </div>
             </div>
         </section>

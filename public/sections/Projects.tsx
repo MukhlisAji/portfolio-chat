@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 
 interface PortfolioItem {
@@ -10,37 +10,26 @@ interface PortfolioItem {
   category: "All" | "Research" | "Personal" | "Competition";
 }
 
-const sampleData: PortfolioItem[] = [
-  {
-    title: "Dashboard monitoring agriculture Indonesia",
-    description: "AI-based dashboard for crop forecasting and agriculture monitoring.",
-    fullDescription:
-      "Invited in faculty research to build deep learning projects in agriculture. The project aims to monitor Indonesia's agricultural conditions and predict crop yields through AI-based data analysis.",
-    techStack: ["Tableau", "Deep Learning", "Forecasting", "Data Mining"],
-    category: "Research",
-  },
-  {
-    title: "Monitoring Stunting Webapp",
-    description: "Generative AI with Streamlit for stunting monitoring.",
-    techStack: [],
-    links: [
-      { type: "Website", url: "#" },
-      { type: "Code", url: "#" },
-    ],
-    category: "Competition",
-  },
-  {
-    title: "Document summarization",
-    description: "LLM-powered summarizer using Next.js + LLaMA 3.3.",
-    links: [{ type: "Code", url: "#" }],
-    category: "Research",
-  },
-];
+
 
 const Projects = () => {
+  const [portfolioItem, setPortfolioItem] = useState<PortfolioItem[]>([]);
+
+
+  useEffect(() => {
+    fetch('/data/projects.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setPortfolioItem(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [])
+
   return (
     <div className="px-4 py-10 space-y-4">
-      {sampleData.map((item, index) => (
+      {portfolioItem.map((item, index) => (
         <div key={index} className="bg-neutral-900 border border-neutral-700 rounded-2xl p-6 shadow hover:shadow-lg transition">
           <h3 className="text-xl font-semibold text-white mb-1">{item.title}</h3>
           <p className="text-sm text-gray-400 mb-2">{item.description}</p>

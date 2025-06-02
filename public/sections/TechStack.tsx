@@ -48,7 +48,7 @@ const TechStack = () => {
             <div className="bg-neutral-900 w-14 h-14 flex items-center justify-center rounded-[2rem] rotate-45">
               <Icon
                 icon={tech.icon}
-                className="-rotate-45 text-yellow-500"
+                className="-rotate-45 text-yellow-100"
                 width={24}
                 height={24}
               />

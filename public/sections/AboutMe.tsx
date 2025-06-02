@@ -7,7 +7,7 @@ const AboutMe = () => {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
                 {/* Left Column */}
                 <div className="flex-1 bg-[#111111] rounded-3xl p-8 space-y-6 shadow-lg">
-                    <button className="border border-yellow-500 text-yellow-500 px-4 py-1 rounded-full text-sm">
+                    <button className="border border-yellow-100 text-yellow-100 px-4 py-1 rounded-full text-sm">
                         Available for work
                     </button>
                     <div>
@@ -65,7 +65,7 @@ const AboutMe = () => {
                     </div>
 
                     {/* CV Button */}
-                    <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-2 rounded-xl transition duration-300">
+                    <button className="bg-yellow-100 hover:bg-yellow-400 text-black font-semibold px-6 py-2 rounded-xl transition duration-300">
                         Download CV
                     </button>
                 </div>

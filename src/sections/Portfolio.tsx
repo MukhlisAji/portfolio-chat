@@ -88,7 +88,7 @@ const Portfolio: React.FC<{ heading?: string }> = ({ heading }) => {
     return (
         <div id={'projects'} className="relative py-32 gap-10 container mx-auto w-full max-w-6xl mx-auto font-quicksand">
             <div className={'flex flex-col mb-20 gap-5 items-center justify-center text-center col-span-2'}>
-                <h3 className={'flex flex-col gap-2 text-5xl font-raleway text-yellow-500 font-bold'}>
+                <h3 className={'flex flex-col gap-2 text-5xl font-raleway text-yellow-100 font-bold'}>
                     <span>Featured</span>
                     <span
                         className="text-neutral-100 bg-clip-text">

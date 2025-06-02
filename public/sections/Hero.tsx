@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, backgroundImage, name }) =
                 {/* Left Text Section */}
                 <div className="flex flex-col gap-4 z-10">
                     <h1 className="text-[6rem] leading-none font-bold font-sans drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
-                        Hello<span className="text-yellow-500 align-top text-[3rem] ml-2">●</span>
+                        Hello<span className="text-yellow-100 align-top text-[3rem] ml-2">●</span>
                     </h1>
                     <div className="flex flex items-center gap-8 z-10">
                         <h2 className="text-[6rem] leading-none font-bold font-sans drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, backgroundImage, name }) =
                     </h3>
 
                     {/* <div className="mt-40 flex justify-center">
-                        <button className="bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition">
+                        <button className="bg-yellow-100 rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition">
                             <Icon icon="heroicons-solid:arrow-sm-down" className="text-white text-xl" />
                         </button>
                     </div> */}

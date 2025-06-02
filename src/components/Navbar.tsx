@@ -66,7 +66,7 @@ export default function Navbar() {
                     onClick={() => setActiveLink(item.link)}
                     className={`transition-colors ${
                       isActive
-                        ? "text-yellow-500"
+                        ? "text-yellow-100"
                         : "text-white hover:text-yellow-400"
                     }`}
                   >

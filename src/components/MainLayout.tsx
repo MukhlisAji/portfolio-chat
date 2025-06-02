@@ -19,7 +19,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
             smoother.current = ScrollSmoother.create({
                 wrapper: wrapperRef.current,
                 content: contentRef.current,
-                smooth: 1.5,
+                smooth: 1,
                 effects: true,
             });
 
@@ -51,7 +51,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
             <div ref={contentRef} id="smooth-content">
                 <div className="min-h-screen flex flex-col">
                     <main className="flex-grow">{children}</main>
-                    <footer
+                    {/* <footer
                         id={"contact"}
                         className="bg-black border-t w-full mx-auto border-neutral-900 py-16"
                     >
@@ -59,12 +59,12 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                             Made with coffee and code by{" "}
                             <a
                                 href={"https://URL_ADDRESS.com/wernerdisum"}
-                                className="text-yellow-500"
+                                className="text-yellow-100"
                             >
                                 Ahmeda
                             </a>
                         </div>
-                    </footer>
+                    </footer> */}
                 </div>
             </div>
         </div>

@@ -2,19 +2,34 @@ import { Icon } from "@iconify/react";
 
 const techStack = [
   {
+    category: "Backend",
+    items: [
+      { icon: "logos:java", label: "Java" },
+      { icon: "logos:python", label: "Python" },
+      { icon: "logos:spring", label: "Spring Boot" },
+      { icon: "logos:apache", label: "Apache Camel" },
+      { icon: "logos:talend", label: "Talend Studio" },
+      { icon: "logos:graphql", label: "GraphQL" },
+      { icon: "logos:rest", label: "REST APIs" }
+    ],
+  },
+  {
+    category: "Frontend",
+    items: [
+      { icon: "logos:react", label: "React.js" },
+      { icon: "logos:nextjs-icon", label: "Next.js" },
+      { icon: "logos:tailwindcss-icon", label: "Tailwind CSS" },
+      { icon: "logos:material-ui", label: "Material UI" },
+      { icon: "logos:javascript", label: "JavaScript" }
+    ],
+  },
+  {
     category: "Databases",
     items: [
       { icon: "logos:mysql", label: "MySQL" },
       { icon: "logos:postgresql", label: "PostgreSQL" },
-      { icon: "logos:google-bigquery", label: "BigQuery" },
-    ],
-  },
-  {
-    category: "ML & Python",
-    items: [
-      { icon: "logos:python", label: "Python" },
-      { icon: "logos:tensorflow", label: "TensorFlow" },
-      { icon: "logos:pytorch-icon", label: "PyTorch" },
+      { icon: "logos:oracle", label: "Oracle" },
+      { icon: "logos:mongodb-icon", label: "MongoDB" }
     ],
   },
   {
@@ -22,7 +37,7 @@ const techStack = [
     items: [
       { icon: "logos:langchain-icon", label: "LangChain" },
       { icon: "logos:langgraph", label: "LangGraph" },
-      { icon: "logos:langsmith", label: "LangSmith" },
+      { icon: "logos:langsmith", label: "LangSmith" }
     ],
   },
   {
@@ -30,25 +45,21 @@ const techStack = [
     items: [
       { icon: "logos:faiss", label: "FAISS" },
       { icon: "logos:chromadb", label: "ChromaDB" },
+      { icon: "logos:pinecone", label: "Pinecone" }
     ],
   },
   {
-    category: "Cloud & Deployment",
+    category: "Cloud & DevOps",
     items: [
-      { icon: "logos:google-cloud", label: "GCP" },
       { icon: "logos:aws", label: "AWS" },
+      { icon: "logos:google-cloud", label: "GCP" },
+      { icon: "logos:azure-icon", label: "Azure DevOps" },
       { icon: "logos:docker-icon", label: "Docker" },
-    ],
-  },
-  {
-    category: "Web Frameworks",
-    items: [
-      { icon: "logos:flask", label: "Flask" },
-      { icon: "logos:fastapi", label: "FastAPI" },
-      { icon: "logos:nextjs-icon", label: "Next.js" },
+      { icon: "logos:github", label: "GitHub Actions" }
     ],
   },
 ];
+
 
 export default function TechStack() {
   return (

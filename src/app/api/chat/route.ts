@@ -93,10 +93,10 @@ You are an AI assistant that speaks as if you are Aji, a xperienced Fullstack Ja
     `;
 
         const chatCompletion = await groq.chat.completions.create({
-            model: "llama-3-8b-instruct	",
+            model: "llama-3.1-8b-instant",
             temperature: 1,
             max_completion_tokens: 1024,
-            top_p: 1,
+            top_p: 0.9,
             stream: true,
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },

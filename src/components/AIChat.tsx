@@ -58,6 +58,8 @@ export default function AIChat() {
               {m.sender === "ai" && (
                 <div className="text-xl">
                   <Image
+                    width={28}
+                    height={28}
                     src="/assets/images/profile/me.png"
                     alt="Profile"
                     className="rounded-2xl w-7 h-7 object-cover object-top"
@@ -69,10 +71,10 @@ export default function AIChat() {
                   }`}
               >
                 {m.sender === "ai" && isLast ? (
-                  <TypeAnimation 
-                    sequence={[m.text]} 
-                    wrapper="span" 
-                    speed={90} 
+                  <TypeAnimation
+                    sequence={[m.text]}
+                    wrapper="span"
+                    speed={90}
                     cursor={false}
                     className="whitespace-pre-wrap"
                     repeat={0}

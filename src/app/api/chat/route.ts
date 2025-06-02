@@ -7,12 +7,12 @@ const groq = new Groq();
 
 const supabase = createClient(
     process.env.SUPABASE_URL ?? "",
-    process.env.SUPABASE_SERVICE_ROLE_KEY ?? "" // Use service role key
+    process.env.SUPABASE_SERVICE_ROLE_KEY ?? ""
 );
 
 const extractor = await pipeline("feature-extraction", "Xenova/all-distilroberta-v1");
 
-export async function getEmbedding(text: string): Promise<number[]> {
+async function getEmbedding(text: string): Promise<number[]> {
     const output = await extractor(text);
     const data = await output.data;
     const embeddingSize = 768;
@@ -38,15 +38,13 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: "No message provided" }, { status: 400 });
         }
 
-        // 1. Generate embedding from user question
         const queryEmbedding = await getEmbedding(message);
         console.log("Query embedding:", queryEmbedding);
 
-        // 2. Query matching resume chunks from Supabase using pgvector
         const { data, error } = await supabase.rpc("match_resume_chunks", {
             query_embedding: queryEmbedding,
-            match_threshold: null, // Optional threshold
-            match_count: 5,     // Return top 5 chunks
+            match_threshold: null,
+            match_count: 5,
         });
 
         if (error) {
@@ -54,8 +52,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: "Failed to search resume chunks" }, { status: 500 });
         }
 
-        // 3. Combine retrieved chunks into a knowledge base (including metadata like section/page)
-        const knowledgeBaseContent = data.map((row: { content: string; metadata?: any }) => {
+        const knowledgeBaseContent = data.map((row: { content: string; metadata?: { section?: string; page_number?: number } }) => {
             const section = row.metadata?.section ?? "Unknown Section";
             const page = row.metadata?.page_number ? `Page ${row.metadata.page_number}` : "";
             return `[${section}${page ? ` - ${page}` : ""}]\n${row.content}`;
@@ -65,45 +62,38 @@ export async function POST(request: Request) {
 
         const now = new Date();
         const formattedDate = now.toLocaleString('id-ID', {
-            month: 'long', // Nama bulan (contoh: "April")
-            year: 'numeric', // Tahun (contoh: "2024")
+            month: 'long',
+            year: 'numeric',
         });
 
-        // 4. Prepare system prompt
         const SYSTEM_PROMPT = `
 You are an AI assistant that speaks as if you are Aji, a xperienced Fullstack Java Developer with 6 years of hands-on experience building enterprise applications using Java, Spring Boot, Next.js and React.js.
  Proven success in designing scalable systems, integrating APIs, and deploying cloud-native apps on AWS, GCP, and Azure DevOps.
 
     When answering questions, always:
-    - Provide detailed explanations about your skills, work experience, and projects.
-    - Use examples from your career to clarify your answers.
+    - Use examples from your career to clarify your answers if relevant.
     - Be honest about your strengths and areas of growth.
     - Maintain a professional yet friendly tone.
-    - Motivate and encourage the user if appropriate.
     - Keep your responses concise and to the point.
     - Use emojis to add personality and engagement.
     - Use the current Date context to provide relevant information.
     - If the question is not relevant to your expertise, politely decline.
     - If the question is about your work experience, provide details about your role, responsibilities, and achievements.
     - If asked about specific technologies or projects, explain how you used them and the impact they had.
+    - Dont mention any tech stack you are not familiar with.
+    - Avoid answering personal or sensitive questions.
+    - Respond only in plain text, no markdown.
     
     Use the following knowledge base to answer user questions accurately:
 
     ${knowledgeBaseContent}
 
-    Rules:
-    1. Keep answers short, clear, and friendly.
-    2. If you don't know the answer, say: "Sorry, I don't know."
-    3. Avoid answering personal or sensitive questions.
-    4. Respond only in plain text, no markdown.
-
     Additional Information for the current Date context:
     Current: ${formattedDate}
     `;
 
-        // 5. Create chat completion using Groq SDK (streaming)
         const chatCompletion = await groq.chat.completions.create({
-            model: "meta-llama/llama-4-scout-17b-16e-instruct",
+            model: "llama-3-8b-instruct	",
             temperature: 1,
             max_completion_tokens: 1024,
             top_p: 1,
@@ -119,10 +109,9 @@ You are an AI assistant that speaks as if you are Aji, a xperienced Fullstack Ja
             aiResponse += chunk.choices[0]?.delta?.content || "";
         }
 
-        // 6. Return full response with metadata for reference display (optional)
         return NextResponse.json({
             reply: aiResponse,
-            references: data // includes content and metadata
+            references: data 
         });
 
     } catch (error) {

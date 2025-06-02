@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import AIChat from "@/components/AIChat";
+import Image from "next/image";
 
 const AboutMe = () => {
     return (
@@ -24,12 +25,6 @@ const AboutMe = () => {
                     <h3 className="text-xl md:text-2xl font-medium text-yellow-100 mt-2 leading-tight">
                         Ask me anything..
                     </h3>
-                    {/* <p className="text-gray-300 max-w-xl">
-                        Experienced Fullstack Java Developer with 6 years of hands-on experience building enterprise applications
-                        using Java, Spring Boot, Microservices, and React.js. Proven success in designing scalable systems,
-                        integrating APIs, and deploying cloud-native apps on AWS, GCP, and Azure DevOps. Strong collaborator in
-                        Agile teams, delivering impactful software for industries including banking, real estate, and energy
-                    </p> */}
                     <AIChat />
 
                     {/* Stats */}
@@ -53,7 +48,10 @@ const AboutMe = () => {
                 <div className="w-full md:max-w-sm bg-[#111111] rounded-3xl p-6 text-center space-y-6 shadow-lg">
                     <h3 className="text-lg font-semibold text-white">Profile:</h3>
                     <div className="flex justify-center">
-                        <img src={'/assets/images/profile/me.png'}
+                        <Image
+                            src={'/assets/images/profile/me.png'}
+                            width={400}
+                            height={400}
                             alt="Profile"
                             className="rounded-2xl w-48 h-48 object-cover object-top"
                         />

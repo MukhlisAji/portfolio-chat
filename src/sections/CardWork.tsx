@@ -1,5 +1,6 @@
 import React from "react";
 import List from "./List";
+import Link from "next/link";
 
 interface CardWorkProps {
     title: string;
@@ -21,12 +22,10 @@ const CardWork: React.FC<CardWorkProps> = ({
                                                background,
                                                description,
                                                responsibility,
-                                               skills,
                                                ctUrl,
                                            }) => {
     return (
         <section className={`relative flex flex-col w-full rounded-lg shadow-lg overflow-hidden border ${background} text-white`}>
-            {/* Header */}
             <div className="relative w-full p-4 grid grid-cols-6 border-b border-neutral-300">
                 <div className="flex flex-col col-span-4">
                     <h3 className="text-xl font-semibold">{title}</h3>
@@ -37,13 +36,11 @@ const CardWork: React.FC<CardWorkProps> = ({
                 </div>
             </div>
 
-            {/* Description */}
             <div className="relative w-full p-4">
                 <h4 className="text-neutral-300 text-sm font-bold">Job Description</h4>
                 <p className="text-sm text-neutral-200">{description}</p>
             </div>
 
-            {/* Responsibilities */}
             <div className="relative w-full p-4">
                 <h4 className="text-neutral-300 text-sm font-bold">Responsibilities</h4>
                 <div className="flex flex-col space-y-1">
@@ -53,14 +50,13 @@ const CardWork: React.FC<CardWorkProps> = ({
                 </div>
             </div>
 
-            {/* CTA Button */}
             <div className="relative w-full p-4 flex justify-end">
-                <a
+                <Link
                     href={ctUrl}
                     className="px-4 py-2 text-sm font-semibold rounded-lg bg-white text-neutral-900 hover:bg-gray-200 transition"
                 >
                     Learn More
-                </a>
+                </Link>
             </div>
         </section>
     );

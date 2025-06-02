@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import List from "./List";
-import TechStack from "./TechStack";
 import Projects from "./Projects";
 
 // Register ScrollTrigger plugin
@@ -23,9 +21,8 @@ interface Project {
     description: string;
 }
 
-const Portfolio: React.FC<{ heading?: string }> = ({ heading }) => {
+const Portfolio: React.FC<{ heading?: string }> = () => {
     const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const [activeIndex, setActiveIndex] = useState<number>(0);
     const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
@@ -36,7 +33,7 @@ const Portfolio: React.FC<{ heading?: string }> = ({ heading }) => {
     }, []);
 
     useEffect(() => {
-        sectionRefs.current.forEach((el, index) => {
+        sectionRefs.current.forEach((el) => {
             if (el) {
                 gsap.fromTo(
                     el,
@@ -55,34 +52,6 @@ const Portfolio: React.FC<{ heading?: string }> = ({ heading }) => {
                 );
             }
         });
-    }, [projects]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const index = sectionRefs.current.findIndex((el) => el === entry.target);
-                    if (index !== -1) {
-                        if (entry.isIntersecting) {
-                            setActiveIndex(index);
-                        } else if (entry.boundingClientRect.top > 0) {
-                            setActiveIndex(Math.max(0, index - 1));
-                        }
-                    }
-                });
-            },
-            { rootMargin: "-20% 0px -50% 0px", threshold: 0.2 }
-        );
-
-        sectionRefs.current.forEach((el) => {
-            if (el) observer.observe(el);
-        });
-
-        return () => {
-            sectionRefs.current.forEach((el) => {
-                if (el) observer.unobserve(el);
-            });
-        };
     }, [projects]);
 
     return (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 
@@ -56,7 +57,7 @@ export default function AIChat() {
             >
               {m.sender === "ai" && (
                 <div className="text-xl">
-                  <img
+                  <Image
                     src="/assets/images/profile/me.png"
                     alt="Profile"
                     className="rounded-2xl w-7 h-7 object-cover object-top"
@@ -71,7 +72,7 @@ export default function AIChat() {
                   <TypeAnimation 
                     sequence={[m.text]} 
                     wrapper="span" 
-                    speed={50} 
+                    speed={90} 
                     cursor={false}
                     className="whitespace-pre-wrap"
                     repeat={0}

@@ -1,15 +1,13 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { Icon } from "@iconify/react";
 
 interface HeroProps {
     title: string;
     subtitle?: string;
-    backgroundImage?: any;
     name?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, subtitle, backgroundImage, name }) => {
+const Hero: React.FC<HeroProps> = ({ name }) => {
     return (
         <>
             <section id={'home'} className="relative h-screen w-full bg-black text-white overflow-hidden flex items-center justify-center px-16">
@@ -42,23 +40,17 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, backgroundImage, name }) =
                     <h3 className="text-[6rem] leading-none font-bold font-sans drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
                         {name}
                     </h3>
-
-                    {/* <div className="mt-40 flex justify-center">
-                        <button className="bg-yellow-100 rounded-full w-12 h-12 flex items-center justify-center hover:scale-110 transition">
-                            <Icon icon="heroicons-solid:arrow-sm-down" className="text-white text-xl" />
-                        </button>
-                    </div> */}
                 </div>
 
                 {/* Side Image */}
-                <div className="absolute right-0 top-0 h-full w-[30%]">
-                    <img
+                {/* <div className="absolute right-0 top-0 h-full w-[30%]">
+                    <Image
                         src={backgroundImage}
                         alt="profile"
                         className="object-cover h-full rounded-l-3xl"
                         draggable={false}
                     />
-                </div>
+                </div> */}
 
             </section>
 

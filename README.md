@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 AI-Powered Resume Chat
 
-## Getting Started
+A fullstack personal resume website enhanced with AI chat capabilities. This project allows users (recruiters, hiring managers, etc.) to interact with your resume using natural language — powered by LLM, embeddings, and a vector search engine.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[🔗 Visit Resume Website]()
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 📄 **Interactive Resume**: View structured personal and professional information.
+- 💬 **AI Chat Interface**: Ask questions about skills, experience, or projects.
+- 🧠 **RAG (Retrieval-Augmented Generation)**: Uses Groq’s LLaMA 3 + LangChain for accurate, resume-based answers.
+- 📁 **PDF Resume Uploader**: Upload your resume to extract and embed content.
+- 🔍 **Semantic Search**: Uses FAISS or ChromaDB for fast vector-based document retrieval.
+- 🌐 **Fullstack**: Next.js frontend + FastAPI backend.
+- 🔐 **Supabase Integration**: For storing embeddings and metadata securely.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Category              | Tools / Libraries                                               |
+|----------------------|-----------------------------------------------------------------|
+| **Frontend**         | React, Next.js (App Router), Tailwind CSS, shadcn/ui, Iconify   |
+| **Backend**          | FastAPI, LangChain, Groq API, HuggingFace Transformers          |
+| **Embeddings & LLM** | LLaMA 3 (via Groq), LangChain, FAISS / ChromaDB                 |
+| **Storage**          | Supabase (PostgreSQL, Storage)                                  |
+| **DevOps / Hosting** | Vercel (frontend), Render / Railway (backend)                   |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -2,13 +2,14 @@
   {
     "title": "CBRE Real Estate Web App",
     "description": "Property management tool with Mapbox and real-time data.",
-    "fullDescription": "Developed a frontend application for CBRE Singapore using React, Vite, Tailwind CSS, and Mapbox to visualize real estate leasing data and manage properties across multiple views.",
+    "fullDescription": "Developed a frontend application for CBRE Singapore using React, Vite, Tailwind CSS, and Mapbox to visualize real estate leasing data and manage properties across multiple views. Backend APIs built with Spring Boot.",
     "techStack": [
+      "Java",
+      "Spring Boot",
       "React",
       "Vite",
       "Tailwind CSS",
-      "Mapbox",
-      "Spring Boot"
+      "Mapbox"
     ],
     "category": "Professional"
   },
@@ -29,12 +30,82 @@
   {
     "title": "BKRM Middleware API for Banking",
     "description": "Banking integration platform built with Apache Camel and Talend.",
-    "fullDescription": "Worked on a middleware API for BKRM using Apache Camel and Talend Studio to facilitate integration between internal banking systems and external services, deployed on GCP.",
+    "fullDescription": "Developed middleware APIs for BKRM using Apache Camel and Talend Studio to integrate internal banking systems with external services. Deployed and monitored the solution on GCP.",
     "techStack": [
       "Apache Camel",
       "Talend",
       "GCP",
       "Java"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "BKR API Catalog Frontend",
+    "description": "Frontend API catalog using Drupal and Apigee.",
+    "fullDescription": "Developed a frontend catalog for BKR's API platform using PHP and Drupal, integrated with Apigee for API management and sandbox access. Hosted at https://sandbox.bankrakyat.com.my/.",
+    "techStack": [
+      "PHP",
+      "Drupal",
+      "Apigee"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "PTMFinance Integration",
+    "description": "Java middleware app to integrate with BMC and generate finance documents.",
+    "fullDescription": "Built a middleware Java application to integrate with BMC Remedy and automate the generation of receipt and invoice documents for finance operations.",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "BMC Remedy",
+      "Apache Tomcat"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "DC Integration to Documentum",
+    "description": "Java-based file integration with Documentum storage.",
+    "fullDescription": "Created a Java application for uploading and storing documents in Documentum as part of a document management workflow.",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "Documentum",
+      "File Integration"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "MDO SLA & OLA Tracker",
+    "description": "Java app to calculate SLA/OLA metrics.",
+    "fullDescription": "Engineered a Java application to compute Service-Level Agreements (SLA) and Operational-Level Agreements (OLA) from system logs and events.",
+    "techStack": [
+      "Java",
+      "Spring Boot",
+      "SLA/OLA",
+      "BMC Mid Tier"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "SSC IT Assignment Automation",
+    "description": "Routing assignment automation tool integrated with BMC.",
+    "fullDescription": "Developed a Java-based automation system to manage and route IT service assignments based on predefined rules, integrated with BMC Mid Tier.",
+    "techStack": [
+      "Java",
+      "BMC Mid Tier",
+      "Automation"
+    ],
+    "category": "Professional"
+  },
+  {
+    "title": "SSC Travel Request Workflow",
+    "description": "Custom travel request workflow app integrated with Traveloka.",
+    "fullDescription": "Implemented a travel request system in Java integrated with Traveloka, Mitra Tour, and BMC Mid Tier to handle custom workflows and approvals.",
+    "techStack": [
+      "Java",
+      "Traveloka API",
+      "BMC Mid Tier",
+      "Workflow Automation"
     ],
     "category": "Professional"
   }

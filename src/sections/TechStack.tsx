@@ -8,7 +8,7 @@ const techStack = [
       { icon: "logos:python", label: "Python" },
       { icon: "logos:spring", label: "Spring Boot" },
       { icon: "logos:apache", label: "Apache Camel" },
-      { icon: "logos:talend", label: "Talend Studio" },
+      // { icon: "logos:talend", label: "Talend Studio" },
       { icon: "logos:graphql", label: "GraphQL" },
       { icon: "logos:rest", label: "REST APIs" }
     ],
@@ -20,7 +20,8 @@ const techStack = [
       { icon: "logos:nextjs-icon", label: "Next.js" },
       { icon: "logos:tailwindcss-icon", label: "Tailwind CSS" },
       { icon: "logos:material-ui", label: "Material UI" },
-      { icon: "logos:javascript", label: "JavaScript" }
+      { icon: "logos:javascript", label: "JavaScript" },
+      { icon: "logos:typescript", label: "TypeScript" }
     ],
   },
   {
@@ -29,6 +30,7 @@ const techStack = [
       { icon: "logos:mysql", label: "MySQL" },
       { icon: "logos:postgresql", label: "PostgreSQL" },
       { icon: "logos:oracle", label: "Oracle" },
+      { icon: "logos:snowflake", label: "Snowflake" },
       { icon: "logos:mongodb-icon", label: "MongoDB" }
     ],
   },
@@ -54,8 +56,8 @@ const techStack = [
       { icon: "logos:aws", label: "AWS" },
       { icon: "logos:google-cloud", label: "GCP" },
       { icon: "logos:azure-icon", label: "Azure DevOps" },
-      { icon: "logos:docker-icon", label: "Docker" },
-      { icon: "logos:github", label: "GitHub Actions" }
+      // { icon: "logos:docker-icon", label: "Docker" },
+      // { icon: "logos:github", label: "GitHub Actions" }
     ],
   },
 ];

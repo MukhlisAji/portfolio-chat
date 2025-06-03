@@ -69,9 +69,16 @@ const AboutMe = () => {
                     </p>
                     {/* Social Icons */}
                     <div className="flex justify-center gap-4 pt-2">
-                        <Icon icon="ri:facebook-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
-                        <Icon icon="ri:behance-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
-                        <Icon icon="ri:global-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
+                        <a href="https://www.linkedin.com/in/mukhlisaji/" target="_blank" rel="noopener noreferrer">
+                            <Icon icon="ri:linkedin-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
+                        </a>
+                        <a href="https://github.com/MukhlisAji" target="_blank" rel="noopener noreferrer">
+                            <Icon icon="ri:github-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
+                        </a>
+                        <a href="https://wa.me/6282299112814" target="_blank" rel="noopener noreferrer">
+                            <Icon icon="ri:whatsapp-fill" className="text-white bg-[#222] rounded-full p-2 w-9 h-9" />
+                        </a>
+
                     </div>
 
                     {/* CV Button */}

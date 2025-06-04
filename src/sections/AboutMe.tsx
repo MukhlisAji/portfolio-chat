@@ -37,10 +37,6 @@ const AboutMe = () => {
                             <h3 className="text-3xl font-extrabold text-yellow-100">4k</h3>
                             <p className="text-sm text-gray-400">Projects Completed</p>
                         </div>
-                        <div className="text-center">
-                            <h3 className="text-3xl font-extrabold text-yellow-100">6k</h3>
-                            <p className="text-sm text-gray-400">Client Worldwide</p>
-                        </div>
                     </div> */}
                 </div>
 
